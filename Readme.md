@@ -1,6 +1,6 @@
 ### install_chirpstack
 
-> wget https://rb.gy/a9mlwm -o install_chirpstack.sh
+> wget -O install_chirpstack.sh https://rb.gy/a9mlwm 
 
 > chmod u+x install_chirpstack.sh
 
