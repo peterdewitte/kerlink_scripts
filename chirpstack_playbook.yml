@@ -1,3 +1,16 @@
+- name: Configure lorad
+  groups:
+    - all
+  tasks:
+    - !shell
+      name: Configuring Lorad
+      cmd: conflex -ajo /etc/lorad/lorad.json /usr/share/lorad/boards/wifc-f923.json /usr/share/lorad/frequency_plans/sx1301/AS923-4.json
+    - !sd_service
+      name: Restart lorad
+      service: lorad
+      enabled: true
+      restart: true
+
 - name: Add chirpstack repository
   groups:
     - all
@@ -112,7 +125,7 @@
 
   defaults:
     mqtt:
-      topic: "eu868"
+      topic: "as915_4"
       server: "localhost:1883"
 
   tasks:
